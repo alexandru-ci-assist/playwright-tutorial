@@ -9,15 +9,15 @@ test.describe('Flaky and non-flaky tests', () => {
     const text = await page.locator('h1').textContent();
 
     // Check if the text is correct.
-    expect(text).toBe("Example Domain");
+    expect(text).toBe('Example Domain');
   });
 
   test('is not flaky', async ({ page }) => {
     await page.goto('https://example.com/');
 
     // Use smart assertions to avoid flakiness.
-    await expect(page.locator('h1')).toHaveText("Example Domain", {
-      timeout: 10000
+    await expect(page.locator('h1')).toHaveText('Example Domain', {
+      timeout: 10000,
     });
   });
 });
